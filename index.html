@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Promise.all() vs Await</title>
+</head>
+
+<body>
+    <div class="info">
+        <p>This is a comparison between using multiple awaits in an async function vs using Promise.all()</p>
+        <p>Each line using 'await' pauses and waits for the promise to resolve before continuing, causing the final
+            result to be very slow</p>
+        <p>Using Promise.all() causes all calls to happen at the same time so there is no hold up in the code execution
+        </p>
+        <p>The asynchronous requests are simulated using setTimeout() with a resolved promise</p>
+        <p>Each side is making 10 requests</p>
+    </div>
+
+    <div class="tests">
+        <div class="all test hidden">Promise.all() Done</div>
+        <div class="normal test hidden">Normal Done</div>
+    </div>
+
+    <button onClick="reset()">Reset</button>
+    <script src="./app.js"></script>
+</body>
+
+</html>
